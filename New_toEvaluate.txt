@@ -1,0 +1,8 @@
+- Design responsive - fara scroll orizontal
+- Formula MathML
+- Taguri semantice em, b, u etc...
+- Fixed preturi
+- Fixed keywords
+(-) Pus pe net
+
+- fix mediaPrint

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--
+    Link: https://github.com/JusticeBringer/JusticeBringer.github.io
+-->
+<html lang="ro">
+
+<head>
+    <% include ../fragmente/headLinks.ejs %>
+
+    <title> Turist în România </title>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="turism, atractii turistice, obiective turistice, relaxare, vizita, poze, informatii, despre site, cultura generala, cladiri">
+    <meta name="description" content="Prima pagina a site-ului -Turist in Romania-. Aici veti gasi atractii turistice din Romania recomandate, o scurta descriere despre a site-ului si o optiune de a fi un utilizator">
+    <meta name="author" content="Arghire Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!--
+        ############################################################### Header ##################################
+    -->
+
+    <header>
+        <% include ../fragmente/header.ejs %>
+    </header>
+
+    <!--
+        ############################################################### Header ##################################
+    -->
+
+    <!--
+        ############################################################### Front Image ##################################
+    -->
+
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 style="font-size:70px">Turist în România</h1>
+            <hr class="cevaHr">
+            <p style="font-size: 30px;">O colecție de actracții turistice</p>
+               <a href="/despre" class="butonFront">Află mai multe</a>
+        </div>
+    </div>
+
+    <!--
+        ############################################################### Front Image ##################################
+    -->
+
+
+    <nav class="pentruNavFront">
+        <ul>
+            <li>
+                <a href="#">Cele mai apreciate &hearts; </a>
+            </li>
+            <li>
+                <a href="#"> Cele mai vizitate &#9872; </a>
+            </li>
+            <li>
+                <a href="#"> Cele mai cunoscute &#10003; </a>
+            </li>
+            <li>
+                <a href="#"> Cele mai necunoscute &#10005;</a>
+            </li>
+            <li>
+                <a href="#"> Cele mai ciudate &#9888;</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--
+        ############################################################### Sectiune ##################################
+    -->
+
+    <section class="pentruSectionFront">
+        <p>Experiența site-ului</p>
+        <h1>O selecție rafinată a obiectivelor turistice</h1>
+
+        <aside class="pentruAsideFront">
+            <h2>
+                O altă viziune
+            </h2>
+            <p>
+                Suntem aici pentru a vă oferi cele mai reușite fotografii ale atracțiilor turistice din România, cunoscute și necunoscute, din munți și din câmpii, de aproape și departe. Toate pentru dumneavoastră.
+            </p>
+        </aside>
+        <div class="pentruDivFront">
+            <figure>
+                <img src="/pictures/viziune1.jpg" alt="Ceva" width="304" height="228">
+            </figure>
+        </div>
+
+        <aside class="pentruAsideFront2">
+            <h2>
+                Perspective unice
+            </h2>
+            <p>
+                Suntem aici pentru a vă oferi cele mai reușite fotografii ale atracțiilor turistice din România, cunoscute și necunoscute, din munți și din câmpii, de aproape și departe. Toate pentru dumneavoastră.
+            </p>
+        </aside>
+
+        <div class="pentruDivFront">
+            <figure>
+                <img src="/pictures/viziune2.jpg" alt="Ceva" width="304" height="228">
+            </figure>
+        </div>
+
+        <div class="butonMiddle">
+            <a class="butonFront" href="/galerie"> Vizualizează toată galeria </a>
+        </div>
+
+    </section>
+
+
+    <aside class="pentruAside2">
+        <h2>Topul obiectivelor vizitate</h2>
+        <ol>
+            <li>Palatul Parlamentului</li>
+            <li>Palatul Culturii</li>
+            <li>Delta Dunării</li>
+            <li>Munții Bucegi</li>
+            <li>Palatul Parlamentului</li>
+            <li>Palatul Culturii</li>
+            <li>Delta Dunării</li>
+            <li>Munții Bucegi</li>
+            <li>Palatul Parlamentului</li>
+            <li>Palatul Culturii</li>
+            <li>Delta Dunării</li>
+            <li>Munții Bucegi</li>
+            <li>Palatul Parlamentului</li>
+            <li>Palatul Culturii</li>
+            <li>Delta Dunării</li>
+            <li>Munții Bucegi</li>
+        </ol>
+    </aside>
+
+    <section class="sectionColor">
+        <div class="sectionContainer">
+            <div>
+                <h2>
+                    Descoperă România
+                </h2>
+                <hr class="pentruFrontHr">
+            </div>
+
+
+            <div class="card">
+                <a href="/galerie"> <img src="/pictures/front.jpg" alt="Avatar" style="width:100%"> </a>
+                <div class="containerFront">
+                    <h3>
+                        București
+                    </h3>
+                    <p>Un oraș magnific</p>
+                </div>
+            </div>
+            <div class="card">
+                <a href="/galerie"> <img src="/pictures/brasov2.jpg" alt="Avatar" style="width:100%"> </a>
+                <div class="containerFront">
+                    <h3>
+                        Brașov
+                    </h3>
+                    <p>Priveliști din poveste</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--
+        ############################################################### Sectiune ##################################
+    -->
+
+    <!--
+        ############################################################### Galerie ##################################
+        ############################################################### Galerie ##################################
+    -->
+
+    
+
+    <h1 class="pentruNav"> Galerie de obiective turisitice</h1>
+    <nav class="frontNav">
+        <button onclick="myFunctionBuc()" class="butonFront">Afișează din București</button>
+        <button onclick="myFunctionIas()" class="butonFront">Afișează din Iași</button>
+        <button onclick="myFunctionBrv()" class="butonFront">Afișează din Brașov</button>
+        <button onclick="myFunctionTul()" class="butonFront">Afișează din Tulcea</button>
+    </nav>
+
+    <!--
+        ############################################################### Script Galerie ##################################
+    -->
+
+    <script src="/javascript/codG.js"></script>
+    <!--
+        ############################################################### Script Galerie ##################################
+    -->
+
+    <!--
+        ############################################################### Imagini Galerie ##################################
+    -->
+
+    <section class="grid-container" id="Buc" style="display: grid;">
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/front2.jpg" alt="Palatul-Parlamentului" width="320" height="220">
+                <figcaption class="figCaption"> Imagine diurnă, frontală </figcaption>
+            </figure>
+        </div>
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/front3.jpg" alt="Palatul-Parlamentului" width="320" height="220">
+                <figcaption class="figCaption">Clădirea, văzută nocturn</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item ">
+            <figure>
+                <img src="/pictures/front.jpg" alt="Centrul-Vechi" width="320" height="220">
+                <figcaption class="figCaption">Centrul vechi</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="grid-container" id="Ias" style="display: none;">
+        <div class="grid-item ">
+            <figure>
+                <img src="/pictures/iasi1.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Palatul Culturii, iarna</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item ">
+            <figure>
+                <img src="/pictures/iasi2.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Biblioteca Universității Tehnice din Iași</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/iasi3.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Apusul în Iași</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="grid-container" id="Brv" style="display: none;">
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/brasov1.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Brașov, privire de pe Tâmpa</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/brasov2.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> O privire de ansamblu</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/brasov3.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Centrul vechi</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="grid-container" id="Tul" style="display: none;">
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/tulcea1.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Munții Măcin</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/tulcea2.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Insula Popina</figcaption>
+            </figure>
+        </div>
+        <div class="grid-item">
+            <figure>
+                <img src="/pictures/tulcea3.jpg" alt=" " width="320" height="220">
+                <figcaption class="figCaption"> Delta Dunării</figcaption>
+            </figure>
+        </div>
+    </section>
+
+
+    <section id="BucInfo">
+        <h2>
+            Informații despre Palatul-Parlamentului
+        </h2>
+        <p>
+            Pornind de la o idee mai veche, clădirea Palatului Parlamentului a fost construită în vremea lui Nicolae Ceauşescu într-o perioadă cu mari privaţiuni economice. Tendinţa dictatorului era, pe de o parte, de a concentra într-o singură clădire toate organele
+            centrale ale statului, iar pe de alta, Ceauşescu îşi dorea o locuinţă sigură din punct de vedere seismic, care să reziste şi unui eventual atac nuclear.
+        </p>
+        <p>
+            Din punct de vedere arhitectural, Palatul Parlamentului este una dintre cele mai controversate clădiri din România: Anca Petrescu1 o identifica cu Palatul Buckingham din Londra şi Palatul Versailles din Franţa, iar arhitecţii vremii cu „micul Phenian”,
+            având un stil eclectic, încărcat de elemente contradictorii2.
+        </p>
+    </section>
+
+    <section id="IasInfo" style="display: none;">
+        <h2>
+            Informații despre Palatul Culturii
+        </h2>
+        <p>
+            Palatul Culturii - palat al muzeelor, recunoscut ca efigie a orașului Iași, a fost construit în stil neogotic și a reprezentat una din ultimele expresii ale romantismului în arhitectura oficială.
+        </p>
+        <p>
+            Deși nu este construit peste temelii antice, după cum se presupunea la începutul secolului al XX-lea, Palatul se înalță, în parte, peste ruinele curtilor domnești medievale, menționate documentar în 1434.
+        </p>
+    </section>
+
+    <section id="BrvInfo" style="display: none;">
+        <h2>
+            Informații despre Centrul Vechi
+        </h2>
+        <p>
+            Centrul vechi al Brasovului este o atractie importanta pentru turistii care sunt in trecere prin orasul de sub poalele Tampei. Cateva dintre principalele atractii turistice sunt: Piata Sfatului si cladirile vechi, datand din secolul al XV-lea, Cetatuia
+            de pe Straja si Biserica Neagra. In centrul vechi al Brasovului se organizeaza frecvent diferite evenimente artisitice, culturale si comerciale.
+        </p>
+        <p>
+
+        </p>
+    </section>
+
+    <section id="TulInfo" style="display: none;">
+        <h2>
+            Informații despre Delta Dunării
+        </h2>
+        <p>
+            Delta Dunării (3446 km²), aflată în mare parte în Dobrogea, România și parțial în Ucraina[1], este a doua ca mărime și cea mai bine conservată dintre deltele europene. Delta Dunării a intrat în patrimoniul mondial al UNESCO în 1991, fiind clasificată
+            ca rezervație a biosferei la nivel național în România și ca parc național în taxonomia internațională a IUCN. Aceasta se suprapune atât siturilor de importanță comunitară Delta Dunării (sit SCI)[2] și Delta Dunării (zona maritimă)[3]; cât
+            și ariilor de protecție specială avifaunistică Beștepe - Mahmudia și Delta Dunării și Complexul Razim - Sinoie[4].
+        </p>
+        <p>
+            Parcul național include rezervațiile naturale: Capul Doloșman, Cetatea Histria, Complexul Vătafu - Lunghuleț, Complexul Sacalin Zătoane, Grindul și Lacul Răducu, Grindul Chituc, Grindul Lupilor, Insula Popina, Lacul Potcoava, Pădurea Caraorman, Pădurea
+            Letea, Roșca - Buhaiova, Corbu-Nuntași - Histria, Lacul Belciug, Lacul Rotundu, Arinișul Erenciuc, Complexul Periteașca - Leahova, Lacul Nebunu, Pădurea Babadag - Codru, Dealul Ghiunghiurmez și Sărăturile Murighiol.
+        </p>
+    </section>
+
+    <!--
+        ############################################################### Imagini Galerie ##################################
+    -->
+
+    <!--
+        ############################################################### Descriere Galerie ##################################
+    -->
+
+    <!--
+        ############################################################### Descriere Galerie ##################################
+    -->
+
+    <!--
+        ############################################################### Galerie ##################################
+        ############################################################### Galerie ##################################
+    -->
+
+    <article>
+        <div class="articleFront">
+
+            <h2 class="pentruNav">
+                Despre acest site
+            </h2>
+            <div class="row">
+                <div class="columnDespre">
+                    <h4>Review-uri individuale</h4>
+                    <p>
+                        Pentru ca vizitele dumneavoastră să fie la nivelul așteptărilor, vă puteți ghida după numărul de stele acordate fiecărui obiectiv în parte.
+                    </p>
+                </div>
+                <div class="columnDespre">
+                    <h4>Cele mai frumoase fotografii</h4>
+                    <p>Toate obiectivele turistice sunt însoțite de fotografii ale turiștilor la acele locuri, cele mai frumoase fiind arătate în prim plan, iar fiecare utilizator poate încărca o nouă poză, care, poate, va fi mai frumoasă decât cele precedente.
+
+                    </p>
+                </div>
+                <div class="columnDespre">
+                    <h4>O comunitate largă</h4>
+                    <p>
+                        Inima acestui site o reprezentați, desigur, dumneavoastră, care mențineți acest site viu, cu cele mai frumoase obiective din România, cu o sortare unică de apreciere în funcție de numărul stelelor, toate acestea pentru viitorii călători prin acele locuri.
+                    </p>
+                </div>
+
+
+            </div>
+
+            <a href="/despre" class="butonFront butonMiddle">Află povestea noastră</a>
+        </div>
+    </article>
+
+
+
+    <aside class="pentruAside">
+        <h2>
+            Informatii suplimentare despre acest site
+        </h2>
+        <p>
+            Site-ul a fost conceput pentru a ține evidența atracțiilor turisitice din România, pentru o mai bună informare a populației despre comorile României. Totodată, pentru pasionații de călătorii se pot vizualiza diferite suveniruri de la magazinele din zonă,
+            iar, pentru cei mai noi pe drumurile României, review-urile călătorilor îi pot îndruma spre cele mai îndrăgite obiective turistice din țara noastră de vis.
+        </p>
+    </aside>
+
+    <div style="padding-bottom: 25%;">
+    </div>
+
+    <!--
+        ############################################################### Footer ##################################
+    -->
+
+    <footer class="footer-distributed">
+        <% include ../fragmente/footer.ejs %>
+    </footer>
+
+    <!--
+        ############################################################### Footer ##################################
+    -->
+</body>
+
+</html>

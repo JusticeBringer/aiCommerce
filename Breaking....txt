@@ -1,0 +1,23 @@
+Creeaza pagina incoming_form
+Creeaza useri.json
+?? CreateChipher?
+
+Vezi ce e cu cu acel __dirname
+
+Linia 149 -> vezi daca trebuie pus register sau inregistrare
+Linia 162 -> vezi sa modifici sa fie pagina de utilizatori nu de studenti
+
+User la ea:
+->Nume
+->Prenume
+->Grupa
+->Poza
+
+User la mine:
+->Nume
+->Prenume
+->Oras
+->Produse
+->Poza
+
+Nu uita sa modifici sa fie inregistrare_producator in loc de inregistrare pagina site-ului

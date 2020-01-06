@@ -1,0 +1,260 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    body, html{
+        margin: 0;
+    }
+
+    .menu li:not(:first-child) {
+        display: none;
+    }
+    .menu li:nth-of-type(2){
+        display: block;
+    }
+
+    .menu .icon{
+        float:right;
+        display: block;
+        color: white;
+        font-size: 40px;
+        margin: 0.5em 1em 0 0;
+        z-index: 100;
+    }
+
+    .menu.responsive {
+        position: relative;
+    }
+    .menu.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menu.responsive li {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .hero-text > h1{
+        font-size: 3em;
+        line-height: 1em;
+    }
+    .hero-text > p{
+        font-size: 1.2em;
+        line-height: 1em;
+    }
+
+    .pentruNavFront{
+        padding-left: 0;
+    }
+
+    .pentruSectionFront > h2{
+        font-size: 1.7em;
+        line-height: 1.2em;
+    }
+
+    .pentruAsideFront{
+        margin: 1em ;
+        float: none;
+        width: 90%;
+    }
+
+    .pentruDivFront{
+        margin: 0em;
+    }
+
+    .pentruAsideFront2{
+        margin: 1em;
+        float: none;
+        width: 90% ;
+    }
+
+    .butonMiddle{
+        margin-left: 0;
+    }
+
+    .pentruAside2{
+        width: 80%;
+        float: none;
+    }
+
+    .sectionContainer{
+         max-width: 320px;
+        margin-left: 2em;
+        padding-top: 0;
+    }
+
+    .card{
+        width: 90%;
+        margin-top: 2em;
+    }
+
+    .articleFront{
+        padding: 0;
+        max-height: none;
+    }
+
+    .headingDespre{
+        padding: 2em 0 1em 0;
+    }
+
+    .columnDespre{
+        width: 80%;
+    }
+    .butonMiddle{
+         margin-left: 4em;
+    }
+
+    .imagine{
+        width: 80vw;
+        height: 25vh;
+    }
+
+    /*
+    ################################### FrontPage ##################################
+     */
+
+    div#fereastra{
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        width: 80vw;
+        animation: mymove 9s ;
+    }
+
+    @keyframes zi {
+        100% {
+            width: 1em;
+            height: 1em;
+            top: 0px;
+            right: 10vw;
+            left: 80vw;
+        }
+        from {
+            background-color: red;
+        }
+        to {
+            background-color: yellow;
+        }
+    }
+
+    .universalHeading{
+        font-size: 7vw;
+    }
+
+    .columnForm0{
+        width: 5%;
+    }
+
+    .columnForm{
+        width: 70%;
+    }
+
+    .iframeStyle{
+        height: auto;
+    }
+
+    .harta{
+        height: auto;
+        width: 80vw;
+    }
+
+    /*
+    ################################### Contact ##################################
+     */
+
+    .columnForm{
+        padding: 0;
+        width: 95%;
+    }
+
+    figcaption{
+        font-size: 4.5vw;
+    }
+
+    .columnForm2{
+        margin-right: 0;
+        width: auto;
+        float: none;
+    }
+
+    .forAbout{
+        width: 100%;
+        padding: 1vw;
+    }
+
+    /*
+   ################################### Despre ##################################
+    */
+
+    .pentruNavFront{
+        display: block;
+    }
+
+    .pentruAside2{
+        float: right;
+        margin: 4vh 5vw 6vh 0;
+    }
+
+    .sectionContainer > div > h2{
+        font-size: 7vw;
+        line-height: 8vw;
+    }
+
+    /*
+   ################################### Galerie ##################################
+    */
+
+    /*
+   ################################### Contul Meu ##################################
+    */
+
+    .columnFormView{
+        float: none;
+        width: auto;
+        padding: 0;
+        margin: 0;
+    }
+
+    .grid-container{
+        display: block;
+        padding: 0;
+        margin: 0;
+        grid-template-columns: auto;
+    }
+
+    .grid-item{
+        padding: 0;
+        font-size: 3vw;
+        text-align: inherit;
+    }
+
+    .columnFormCeva{
+        width: auto;
+        padding: 0;
+    }
+
+    small{
+        font-size: 4vw;
+    }
+
+    /*
+   ################################### palatulParlamentului ##################################
+    */
+
+}
+
+
+/* Footer Responsive */
+
+@media (max-width: 600px) {
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right {
+        text-align: center;
+    }
+    .footer-distributed .footer-right {
+        float: none;
+        margin: 0 auto 20px;
+    }
+    .footer-distributed .footer-left p.footer-links {
+        line-height: 1.8;
+    }
+}

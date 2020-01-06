@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%include ../fragmente/headLinks.ejs%>
+    <%include ../fragmente/prod.ejs%>
+    <%include ../fragmente/userName.ejs%>
+
+    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+    <title> Profil</title>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="palat, vizita, adulti, bilete, tarif">
+    <meta name="description" content="Pagina desemnata pentru vizualizarea atractiei turistice Palatul Parlamentului">
+    <meta name="author" content="Arghire Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+<header>
+    <% include ../fragmente/header.ejs %>
+</header>
+
+<audio id="myAudio">
+    <source src="audio/ASMR%20Sounds%20of%20Salad%20Cooking%20Light.mp3" type="audio/mpeg">
+</audio>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="/javascript/mobileMenu.js"></script>
+<script src="javascript/topuriProd.js"></script>
+<script src="/javascript/onloadProducator.js"></script>
+<script src="/javascript/globale.js"></script>
+
+<main>
+    <h1 class="universalHeading">
+            <h2 class="universalHeading" id="headingSalut"> Salut, <%= user.nume + " " + user.prenume %> </h2>
+            <p class="universalHeading" id="rolUtilizator"> Rol: <%= user.rol%></p>
+            <p class="showNone" id="firstNumeHeading"> <%= user.email %> </p>
+    </h1>
+</main>
+
+<section class="row">
+    <div class="columnForm0">
+
+    </div>
+    <div class="columnFormView">
+        <figure>
+            <img src="/uploads/<%= user.poza %>" alt="nu are poza" id="pozaUtilizator" class="imaginePagina">
+            <figcaption> </figcaption>
+        </figure>
+    </div>
+
+
+    <div class="columnForm">
+
+        <div class="emailAbove">
+            <button class="butonNav" onclick="showEmail()"> Adresa Email: </button>
+            <p class="showNone" id="utilizatorEmail">
+            </p>
+        </div>
+
+        <table>
+            <caption>Programul de lucru</caption>
+            <thead>
+            <tr>
+                <th> Zile </th>
+                <th> Interval orar</th>
+            </tr>
+            </thead>
+            <tr>
+                <th> Luni </th>
+                <th> 09 - 17 </th>
+            </tr>
+            <tr>
+                <th> Marti </th>
+                <th> 09 - 17 </th>
+            </tr>
+            <tr>
+                <th> Miercuri </th>
+                <th> 09 - 17 </th>
+            </tr>
+            <tr>
+                <th> Joi </th>
+                <th> 09 - 17 </th>
+            </tr>
+            <tr>
+                <th> Vineri </th>
+                <th> 09 - 17 </th>
+            </tr>
+            <tr>
+                <th> Sambata </th>
+                <th> 09 - 17 </th>
+            </tr>
+            <tr>
+                <th> Duminica </th>
+                <th> Liber </th>
+            </tr>
+            <tfoot>
+            <tr>
+                <td colspan="2"> Observatie: programul poate varia</td>
+            </tr>
+            </tfoot>
+        </table>
+
+        <div>
+            <h2>
+                Realizări:
+            </h2>
+        </div>
+
+        <div  id="esteTop">
+
+        </div>
+        <div id="divtoshow" class="forDivShow">
+
+        </div>
+        <div class="spatiuJos">
+
+        </div>
+        <span onmouseover="hoverdiv(event,'divtoshow')" onmouseout="hoverdiv(event,'divtoshow')">*Află alte informații</span>
+    </div>
+
+</section>
+
+<section class="facClear">
+    <div class="columnForm">
+    </div>
+    <div class="columnForm">
+        <h2> Produsele vândute de producător:
+        </h2>
+        <ul  id="produseUtilizator" onmouseenter="mouseCoord()" onmouseleave="mousePleaca()">
+
+        </ul>
+    </div>
+
+    <div class="columnForm">
+        <h2> Animatie
+        </h2>
+        <button class="butonFormLogin" onclick="makeCastravete()"> Porneste animatia - castraveti </button>
+        <button  class="butonFormLogin" onclick="stopAnim()"> Opreste animatia - castraveti </button>
+        <button class="butonFormLogin" onclick="makeTomato()">Pornește animația - roșii </button>
+        <button class="butonFormLogin" onclick="stopTomato()">Oprește animația - roșii</button>
+        <div id="animatieId">
+
+        </div>
+    </div>
+
+</section>
+
+<section class="row">
+    <div class="columnFormCeva">
+        <h2>
+            Preț caș
+        </h2>
+        <ul>
+            <li> 100 g: 5 lei</li>
+            <li> 1 kg:
+                <math xmlns = "http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi> 30 </mi>
+                        <mo> * </mo>
+                        <mi> 2 </mi>
+                        <mo> - </mo>
+                        <mi> 10 </mi>
+                        <mo> = </mo>
+                        <mi> 50 </mi>
+                        <mi> lei </mi>
+                    </mrow>
+                </math>
+            </li>
+        </ul>
+    </div>
+    <div class="columnFormCeva">
+        <h2>
+            Preț roșii
+        </h2>
+        <ul class="faBlock">
+            <li> 100 g: 2 lei </li>
+            <li> 1 kg:
+                <math xmlns = "http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi> 60 </mi>
+                        <mo> * </mo>
+                        <mi> 2 </mi>
+                        <mo> - </mo>
+                        <mi> 20 </mi>
+                        <mo> = </mo>
+                        <mi> 100 </mi>
+                        <mo> lei </mo>
+                    </mrow>
+                </math>
+            </li>
+        </ul>
+    </div>
+    <div class="columnFormCeva">
+        <h2>
+            Preț castraveți
+        </h2>
+        <ul class="faBlock">
+            <li> 100 g: 1 leu </li>
+            <li> 1 kg:
+                <math xmlns = "http://www.w3.org/1998/Math/MathML">
+                    <mrow>
+                        <mi> 60 </mi>
+                        <mo> * </mo>
+                        <mi> 2 </mi>
+                        <mo> - </mo>
+                        <mi> 20 </mi>
+                        <mo> = </mo>
+                        <mi> 100 </mi>
+                        <mo> lei </mo>
+                    </mrow>
+                </math>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <p>Preturi valabile <time>2019</time>-<time>2020</time>.</p>
+    </p>
+</section>
+
+<h1 class="headingPozeUser">
+    Audio si video cu salata din solarul lui <%= user.nume%>
+</h1>
+
+<section class="facClear">
+    <div class="columnForm spatiereTop">
+    </div>
+    <div class="columnForm spatiereTop">
+        <h2> Audio </h2>
+        <button onclick="playAudio()" type="button" class="butonFormLogin">Play Audio</button>
+        <button onclick="pauseAudio()" type="button" class="butonFormLogin">Pause Audio</button>
+    </div>
+    <div class="columnForm spatiereTop">
+        <h2> Video </h2>
+
+        <button onclick="playVid()" type="button" class="butonFormLogin">Play Video</button>
+        <button onclick="pauseVid()" type="button" class="butonFormLogin">Pause Video</button>
+
+        <video id="myVideo" width="320" height="176">
+            <source src="video/ASMR%20Sounds%20of%20Salad%20Cooking%20Light.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<h1 class="headingPozeUser"> Imagini ale utilizatorului </h1>
+
+<section class="grid-container">
+    <div class="grid-item">
+        <figure>
+            <img src="/pictures/pozeUtilizator%20(1).jpg" alt="" title="Peisaj diurn" class="imagine">
+            <figcaption> Oi </figcaption>
+        </figure>
+    </div>
+    <div class="grid-item">
+        <figure>
+            <img src="/pictures/pozeUtilizator%20(3).jpg" alt="" title="Peisaj diurn" class="imagine">
+            <figcaption>Roșii din solar</figcaption>
+        </figure>
+    </div>
+    <div class="grid-item">
+        <figure>
+            <img src="/pictures/pozeCastravete.jpg" alt="" title="Peisaj nocturn" class="imagine">
+            <figcaption>Castraveți din solar</figcaption>
+        </figure>
+    </div>
+</section>
+
+<h1 class="universalHeading">
+    Oferte
+</h1>
+
+<section>
+    <div class="columnForm">
+    </div>
+    <div class="columnForm">
+        <button class="butonFormLogin" onclick="startOferta()"> Activeaza oferta/ofertele </button>
+    </div>
+    <div class="columnForm">
+        <button class="butonFormLogin" onclick="stopOferta()"> Opreste oferta/ofertele</button>
+        <button class="butonFormLogin" onclick="eraseOferta()"> Sterge oferta/ofertele</button>
+    </div>
+</section>
+
+<section class="facClear">
+    <div class="sectionContainer" id="punOferte">
+
+    </div>
+</section>
+
+<footer class="footer-distributed ">
+    <% include ../fragmente/footer.ejs %>
+</footer>
+
+</body>
+</html>

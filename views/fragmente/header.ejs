@@ -1,0 +1,36 @@
+<nav>
+    <ul class="menu" id="myTopNav">
+        <li> <a href="/">AiComerț </a> </li>
+        <li class="icon" href="javascript:void(0)" onclick="mobileView()">
+            <i class="fa fa-bars"></i></li>
+
+        <% if(!locals.user){ %>
+        <li  class="howRight"> <a href="/contulMeu">Contul meu</a></li>
+        <% } %>
+        <% if(locals.user){ %>
+            <li  class="howRight"> <a href="/logout">Logout</a></li>
+        <% } %>
+        <% if(locals.user && user.rol == 'producator'){ %>
+            <li  class="howRight"> <a href="/utilizatorProducator">Profil</a></li>
+        <% } %>
+        <% if(locals.user && user.rol == 'client'){ %>
+            <li  class="howRight"> <a href="/utilizatorClient">Profil</a></li>
+        <% } %>
+        <li class="dropdown howRight">
+            <div href="#" class="dropbtn"> Producători <i class="fa fa-caret-down"></i></div>
+            <div class="dropdown-content">
+                <a href="/galerie"> Toate locațiile</a>
+                <a href="#">Din sudul țării</a>
+                <a href="#">Din nordul țării</a>
+                <a href="#">Din vestul țării</a>
+                <a href="#">Din estul țării</a>
+            </div>
+        </li>
+        <% if(locals.user){ %>
+        <li class="howRight">  <a href="/topuriProd">Topuri</a></li>
+        <% } %>
+        <li  class="howRight"> <a href="/despre">Despre</a> </li>
+        <li  class="howRight"> <a href="/contact" >Contact</a> </li>
+        <li  class="howRight"> <a href="/" class="active" >Acasă</a> </li>
+    </ul>
+</nav>

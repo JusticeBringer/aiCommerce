@@ -1,0 +1,66 @@
+.pentruNavFront{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #10172e;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 25vw;
+}
+
+.pentruNavShow{
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    padding-left: 13vw;
+}
+
+.pentruNavShow > ul > li{
+    background-color: #003348;
+    list-style-type: none;
+    margin-left: 2vw;
+}
+
+section > p{
+    text-align: center;
+}
+
+section > h1{
+    font-size: 35px;
+}
+
+section > h2{
+    text-align: center;
+    font-size: 2em;
+}
+
+.pentruSectionFront{
+    background-color: #ffffff;
+    margin-top: 60px;
+}
+
+.pentruSectionFront > p{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.pentruDivFront{
+    margin: 80px 0 20px 300px;
+}
+
+.pentruAsideFront{
+    width: 30%;
+    float: right;
+    background: #ffffff;
+    margin: 60px 300px 20px 0;
+}
+
+.pentruAsideFront2{
+    width: 30%;
+    float: left;
+    background: #ffffff;
+    margin: 60px 100px 20px 340px;
+}
+
+.pentruDivFront2{
+    margin: 80px 0 20px 0;
+}

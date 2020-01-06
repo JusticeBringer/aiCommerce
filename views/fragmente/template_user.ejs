@@ -1,0 +1,12 @@
+<div class="template_user">
+    <section class="student">
+        <h2>Producatori: <%= producatori.nume %></h2>
+        <img src="/uploads/<%= producatori.poza %>" alt="[<%= producatori.nume %> nu are poza]" />
+        <p>Produse:</p>
+        <ul style="padding-left:10px;">
+            <% for (n of produse) { %>
+                <li><%= n %></li>
+            <% }  %>
+        </ul>
+    </section>
+</div>

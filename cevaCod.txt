@@ -1,0 +1,32 @@
+
+<main>
+    <div class="afisaj">
+        <h1>producatorii</h1>
+    </div>
+    <table>
+        <tr>
+            <th>id</th><th>Nume</th><th>Prenume</th><th>Produse</th><th>Imagine</th>
+        </tr>
+        <% for (var i = 0; i < producatori.length; i++) { %>
+            <tr>
+                <td><%= producatori[i].id %></td>
+                <td><%= producatori[i].nume %></td>
+                <td><%= producatori[i].prenume %></td>
+                <td><%= producatori[i].produse %></td>
+
+                <td><img class="imaginePagina" src="/uploads/<%= producatori[i].poza %>" alt="nu are poza"/></td>
+            </tr>
+        <% } %>
+    </table>
+    <% for (var i = 0; i < producatori.length; i++) {
+        console.log("====")
+        console.log(produse);
+        produse_st=Array.prototype.filter.call(produse, function(el){ return el.id==producatori[i]} );
+        console.log("produse_st")
+        console.log(producatori[i]);
+        console.log(produse[0]);
+        console.log(produse_st);
+    %>
+    <% } %>
+
+</main>

@@ -1,0 +1,343 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin-top: 1rem;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+section {
+    line-height: 1.7em;
+    font-size: 1.6em;
+}
+
+.cevaHrWhite{
+    width: 70%;
+    border: 1px solid white;
+}
+
+.cevaHrBlack{
+    margin-top: -1em;
+    float: left;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.titlu {
+    text-align: center;
+}
+
+.subtitlu {
+    text-align: center;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../pictures/fundal2.jpg");
+    /* background-image: url("poze/imggg.jpg"); */
+    height: 100%;
+    width: 100%;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-text > h1{
+    font-size: 4vw;
+    margin-bottom: 1.2em;
+    line-height: 2vw;
+}
+
+.hero-text > p{
+    font-size: 1.7vw;
+}
+
+.headingDespre{
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    padding: 0 0 2em 0;
+    margin: 0;
+}
+
+.universalHeading{
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    margin: 2em 0 3em 0;
+}
+
+.headingComanda{
+    text-align: left;
+    color: black;
+    font-size: 1.5vw;
+    margin: 0 0 3em 0;
+}
+
+.universalHeadingLeft{
+    text-align: left;
+    color: black;
+    font-size: 2em;
+    margin: 2em 0 3em 2em;
+}
+
+.headingPozeUser{
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    margin: 2em 0 0 0;
+}
+
+.forAbout {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: 5em;
+    margin-left: 5em;
+    width: 70%;
+}
+
+.pentruAside2{
+    width: 20%;
+    float: right;
+    background: rgb(181, 237, 254);
+    margin: 5em 1em 18em 4em;
+    text-align: left;
+}
+
+.pentruAside2 > h2{
+    text-align: center;
+}
+
+.pentruAside2 li{
+    float: none;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.pentruTopList{
+    float: left;
+}
+
+.pentruTopList li {
+    float: none;
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+.columnDespre{
+    float: left;
+    width: 30%;
+    padding: 1.2em;
+    color: white;
+    text-align: justify;
+}
+
+/* Clear floats after the columns */
+
+.row{
+    padding: 3vw;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.iframeStyle {
+    text-align: center;
+    width: 10vw;
+    height: 10vh;
+}
+
+.spatiereTop{
+    margin-top: 4vh;
+}
+
+.articleFront{
+    padding: 7em;
+    background-image: url("/pictures/pattern.png");
+    max-height: 60vh;
+    background-color: #43707b;
+}
+
+.sectionColor{
+    background-color: #f5f7fa;
+}
+
+.sectionContainer{
+    max-width: 60vw;
+    text-align: left;
+    margin-left: 10em;
+    padding-top: 3em;
+    box-sizing: border-box;
+}
+
+.sectionContainer > div > h2{
+    text-align: left;
+    font-size: 2.5em;
+}
+
+.pentruFrontHr{
+    width: 15%;
+    border: 1px solid #e51937;
+    float: left;
+    font-size: 1em;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 23%;
+    margin-top: 6em;
+    margin-bottom: 3em;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.containerFront {
+    padding: 1.6em 1em;
+}
+
+@media print{
+    div > div:not(.to-print), div:not(.to-print) > div > h2:not(.to-print){
+        color: red;
+    }
+}
+
+.loginForm{
+    text-align: center;
+}
+
+.breakElements{
+    margin-top: 0.4em;
+    font-size: 1vw;
+}
+
+.headingLogInre{
+    font-size: 1.8em;
+}
+
+.spatiuJos{
+    margin-bottom: 2vh;
+}
+
+.spatiereJos{
+    margin-bottom: 10vh;
+}
+
+.showNone{
+    display: none;
+}
+
+.columnTop{
+    float: left;
+    width: 40%;
+    padding: 1em;
+}
+
+.columnTop li{
+    float: none;
+    margin-top: 0.4vh;
+}
+
+.facClear{
+
+}
+
+.facClear:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.borderUser{
+    border: 2px solid darkblue;
+}
+
+.textHarta{
+
+}
+
+.forMouse{
+
+}
+
+.toDelete{
+    border: 1px solid black;
+}
+
+.forDivShow{
+    position: fixed;
+    display:none;"
+}
+
+.forLogout {
+    margin: 3vh 0 3vh 3vw;
+    font-size: 3vh;
+}
+
+.fundalTomato{
+    min-width: 2vw;
+    min-height: 20vh;
+    background: #55a89d;
+    position: relative;
+}
+
+.fundalCastravete{
+    min-width: 2vw;
+    min-height: 20vh;
+    background: #a8a17d;
+    position: relative;
+}
+
+.toMove{
+    position: relative;
+}
+
+.tomato{
+    width: 0.5vw;
+    height: 4vh;
+    background: #800d05;
+    padding: 16px;
+    border-radius: 40px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    border: 3px solid #000000;
+}
+
+.castravete{
+    width: 0.5vw;
+    height: 4vh;
+    background: green;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    border: 3px solid #003400;
+}
+
+.codita{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 0.5vw;
+    height: 1vh;
+    background: black;
+}

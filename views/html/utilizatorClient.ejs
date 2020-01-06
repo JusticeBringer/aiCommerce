@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%include ../fragmente/headLinks.ejs%>
+    <%include ../fragmente/client.ejs%>
+    <%include ../fragmente/userName.ejs%>
+
+    <title> Profil</title>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="palat, vizita, adulti, bilete, tarif">
+    <meta name="description" content="Pagina desemnata pentru vizualizarea atractiei turistice Palatul Parlamentului">
+    <meta name="author" content="Arghire Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+<header>
+    <% include ../fragmente/header.ejs %>
+</header>
+
+<script src="/javascript/mobileMenu.js"></script>
+<script src="javascript/globale.js"></script>
+
+<main>
+    <h1 class="universalHeading">
+        <h3 class="universalHeading"> Salut, <%= user.nume + " " + user.prenume %> </h3>
+        <p class="universalHeading"> Rol: <%= user.rol%></p>
+        <p class="showNone" id="firstNumeHeading"> <%= user.email %> </p>
+    </h1>
+</main>
+
+<section class="row">
+    <div class="columnForm0">
+
+    </div>
+    <div class="columnFormView">
+        <figure>
+            <img src="/uploads/<%= user.poza %>" alt="nu are poza"  class="imaginePagina">
+            <figcaption> </figcaption>
+        </figure>
+    </div>
+
+
+    <div class="columnForm">
+        <div class="emailAbove">
+            <button class="butonNav"  onclick="window.location.href = '/comanda';"> Comandă produse </button>
+        </div>
+    </div>
+
+</section>
+
+
+<footer class="footer-distributed ">
+    <% include ../fragmente/footer.ejs %>
+</footer>
+
+</body>
+</html>

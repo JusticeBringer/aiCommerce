@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<head>
+    <%include ../fragmente/headLinks.ejs%>
+
+    <title> Contul meu </title>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="turism, atractii turistice, inregistrare, logare, cont, utilizator, parola, atractii turistice adaugate, favorite">
+    <meta name="description" content="Pagina desemnata pentru contul fiecarui utilizator, unde poate vedea lista de atractii turistice a atractiilor turistice -Vreau sa merg- sau a -Favoritelor- sau comentariile oferite ca -Review-uri-">
+    <meta name="author" content="Arghire Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script type="text/javascript" src="../../node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script>
+        socketUrl = "../../contulMeu";
+        if(document.location.href.indexOf("localhost") != -1) {
+            socketUrl = "http://127.0.0.1:8080";
+        }
+        const socket = io(socketUrl,{reconnect: true});
+        //var socket = io.connect('http://127.0.0.1:8080', {reconnect: true});
+        socket.on("buton", (data) => {
+            alert("buton apasat")
+        });
+    </script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <% include ../fragmente/header.ejs %>
+    </header>
+
+    <script src="/javascript/mobileMenu.js"></script>
+    <main>
+        <div class="row">
+            <div class="columnForm0">
+            </div>
+
+            <div class="columnForm">
+                <h3 class="headingLogInre">Autentificare</h3>
+                <form id="login" method="post">
+                    <p>
+                        <label>
+                            Email: <input type="text" name="email" placeholder="exemplu@gmail.com" value="">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Parolă: <input type="password" name="parola" placeholder="**********" value="">
+                        </label>
+                    </p>
+                    <p>
+                        Continuând, confirmi că ești de acord cu termenii noștri de utilizare
+                    </p>
+                    <p>
+                        <input type="submit" value="Continuă">
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="columnForm0">
+
+            </div>
+            <div class="columnFormLogin">
+                <hr class="cevaHrBlack">
+                <p class="">
+                    Nu ai încă un cont?
+                </p>
+                <a href="/inregistrare_producator" class="butonFormLogin">Creează-ți contul acum - Producator </a>
+                <br><br><br>
+                <a href="/inregistrare_client" class="butonFormLogin">Creează-ți contul acum - Client</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-distributed">
+        <% include ../fragmente/footer.ejs %>
+    </footer>
+
+</body>
+
+</html>

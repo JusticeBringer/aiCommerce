@@ -1,0 +1,31 @@
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+th,td{
+    border:1px solid black;
+    padding: 5px;
+}
+td:empty{
+    padding: 70px !important;
+}
+table{
+    border-collapse:collapse;
+    empty-cells:show;
+}
+.columnFormView {
+    float: left;
+    width: 30%;
+    padding: 1em;
+    margin-right: 8em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 13em;
+}
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}

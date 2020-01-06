@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Producatori...</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Ionel"/>
+    <% include ../fragmente/headLinks.ejs %>
+
+</head>
+<body class="container">
+
+<header>
+    <% include ../fragmente/header %>
+</header>
+
+<main>
+    <div class="afisaj">
+        <h1> Producatori </h1>
+
+        <table id="profesori">
+            <tr>
+                <th>id</th><th>Nume</th><th>Prenume</th><th>Data</th><th>Produse vandute</th>
+            </tr>
+
+            <% for (var i = 0; i < client.length; i++) {
+            if(client[i].rol=="producator"){
+            %>
+                <tr>
+                    <td><%= client[i].id %></td>
+                    <td><%= client[i].nume %></td>
+                    <td><%= client[i].email %></td>
+                    <%
+                        d=new Date(client[i].dataInreg)
+                        sir_data=`${d.getDate()}/${d.getMonth()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
+                    %>
+                    <td><%=  sir_data %></td>
+                    <td><%=  client[i].produse %></td>
+                </tr>
+
+            <% } %>
+            <% } %>
+        </table>
+    </div>
+</main>
+
+<footer>
+    <% include ../fragmente/footer %>
+</footer>
+
+</body>
+</html>

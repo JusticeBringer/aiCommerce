@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<head>
+    <%include ../fragmente/headLinks.ejs%>
+
+    <title> Contact </title>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="nume, prenume, subiect, feedback, descriere">
+    <meta name="description" content="Pagina desemnata pentru completarea de formulare pentru a lua legatura cu administratorii site-ului si a trimite feedback sau pentru a cere diverse informatii">
+    <meta name="author" content="Arghire Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+<header>
+    <% include ../fragmente/header.ejs %>
+</header>
+
+<script src="/javascript/mobileMenu.js"></script>
+<script src="/javascript/onloadContact.js"></script>
+
+
+<div class="row">
+    <div class="columnForm0">
+
+    </div>
+    <div class="columnForm">
+        <form action="/action_page.php" id="contactForm">
+            <label for="fname" id="prenumeForm">Prenume</label>
+
+            <label for="lname" id="numeForm">Nume</label>
+
+            <label id="punEmail">
+                Email
+            </label>
+
+            <label for="country" id="subiectForm">
+                 Subiect
+                <div class="spatiuJos spatiereTop" id="primRadio"></div>
+                <div class="spatiuJos" id="doiRadio"></div>
+            </label>
+
+            <label id="gravitate">
+                Gravitate
+            </label>
+
+            <div class="spatiuJos"></div>
+            <label for="subject">Descriere</label>
+            <div id="descriereForm">
+
+            </div>
+
+            <div id ="submitForm">
+
+            </div>
+
+            <div id="fereastra">
+                <i class="right"></i>
+            </div>
+        </form>
+    </div>
+
+    <div class="columnForm iframeStyle">
+        <div class="hartaOuter">
+            <div class="harta">
+                <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=University%20of%20Bucharest&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+            </div>
+            <div>
+                <p class="textHarta"> </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-distributed ">
+    <% include ../fragmente/footer.ejs %>
+</footer>
+
+</body>
+
+</html>

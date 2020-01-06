@@ -1,0 +1,39 @@
+<form action="/action_page.php" id="contactForm">
+            <label for="fname">Prenume</label>
+            <input type="text" id="fname" name="firstname" placeholder="Ion">
+
+            <label for="lname">Nume</label>
+            <input type="text" id="lname" name="lastname" placeholder="Dinescu">
+
+            <label for="country">Subiect</label>
+            <select id="country" name="country">
+                <option value="australia">Feedback</option>
+                <option value="canada">Problemă</option>
+            </select>
+
+            <label for="subject">Descriere</label>
+            <textarea id="subject" name="subject" placeholder="Descrierea problemei.." class="description"></textarea>
+
+            <input type="submit" value="Trimite">
+
+            <div id="fereastra">
+                <i class="right"></i>
+            </div>
+        </form>
+
+
+<% if(locals.user){ %>
+    <p class="salut">Salut,<br/><%= user.nume %></p>
+<% } %>
+
+<p class="salut">Profilul utilizatorului <%= user.nume %>  <br/></p>
+
+<%= user.email %>
+ <section class="hero-image">
+        <div class="hero-text">
+            <h1>Comerciant în România</h1>
+            <hr class="cevaHr">
+            <p> Lasă-te descoperit de clienți</p>
+               <a href="/despre" class="butonFront">Explorează harta</a>
+        </div>
+    </section>

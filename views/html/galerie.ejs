@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<head>
+    <% include ../fragmente/headLinks.ejs %>
+
+    <title> Galerie </title>
+
+    <meta charset="UTF-8">
+    <meta name="keywords" content="obiective, palat, cele mai, munti, galerie">
+    <meta name="description" content="Pagina desemnata pentru vizualizarea tuturor atractiilor turistice adaugate pe acest site, de la cele mai indragite, pana la cele mai necunoscute. Poze cu diverse cladiri si peisaje de pe teritoriul Romaniei">
+    <meta name="author" content="Arghire Gabriel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+<!--
+        ############################################################### Header ##################################
+    -->
+
+    <header>
+        <% include ../fragmente/header.ejs %>
+    </header>
+
+    <script src="/javascript/mobileMenu.js"></script>
+    <script src="javascript/galeryPage.js"></script>
+<!--
+        ############################################################### Header ##################################
+    -->
+
+    <h1 class="universalHeading"> Descoperă producători din România </h1>
+
+    <nav class="pentruNavShow">
+        <ul>
+            <li>
+                <button onclick="showHide()" class="butonGradient"> Cele mai apreciate &hearts;</button>
+            </li>
+            <li>
+                <a href="#">Cei mai apreciați &hearts; </a>
+            </li>
+            <li>
+                <a href="#"> Cei mai vizitați &#9872; </a>
+            </li>
+            <li>
+                <a href="#"> Cei mai cunoscuți &#10003; </a>
+            </li>
+            <li>
+                <a href="#"> Cei mai îndepărtați &#10005;</a>
+            </li>
+            <li>
+                <a href="#"> Cei mai ... &#9888;</a>
+            </li>
+        </ul>
+
+    </nav>
+
+<script src="/javascript/galeryPage.js"></script>
+
+
+    <main class="sectionColor" id="descopera1">
+        <div class="sectionContainer">
+            <div>
+                <h2>
+                    Producători
+                </h2>
+                <hr class="pentruFrontHr">
+            </div>
+            <br>
+            <% for (var i = 0; i < producatori.length; i++) { %>
+            <% if(i % 4 == 0 && i != 0){ %>
+                <div class="spatiuJos">
+                </div>
+            <% }%>
+            <div class="card">
+                <a href="/galerie"> <img src="/uploads/<%= producatori[i].poza %>" alt="nu are poza"  class="showCard"> </a>
+                <div class="containerFront">
+                    <h3>
+                        <%= producatori[i].nume %>
+                        <%= producatori[i].prenume %>
+                    </h3>
+                    <p> Produse:  <%= producatori[i].produse %> </p>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </main>
+
+
+<!--
+############################################################### Footer ##################################
+-->
+<footer class="footer-distributed">
+        <% include ../fragmente/footer.ejs %>
+</footer>
+<!--
+############################################################### Footer ##################################
+-->
+
+
+</body>
+
+</html>
