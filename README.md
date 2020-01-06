@@ -18,3 +18,15 @@ Client account
 Email: gabithebigg@gmail.com 
 Password: 123321
 ```
+## Deployment
+Just click the link [Link](https://ai-commerce.herokuapp.com)
+
+## Built With
+* HTML
+* CSS
+* JS
+* Node.js
+
+## Author
+
+* **Arghire Gabriel**
