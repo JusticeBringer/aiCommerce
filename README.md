@@ -22,7 +22,7 @@ Password: 123321
 ## Producer point of view
 
 ### Profile
-![Producer Profile](uploads/prodProfile.png)
+![Producer Profile](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/prodProfile.PNG)
 ### Animations with a tomato and a cucumber
 
 ### Rankings
