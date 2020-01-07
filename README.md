@@ -24,14 +24,16 @@ Password: 123321
 ### Profile
 ![Producer Profile](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/prodProfile.PNG)
 ### Animations with a tomato and a cucumber
-
+![](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/animations.PNG)
 ### Rankings
+![](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/topuri.PNG)
 
 ## Client point of view
 
 ### Profile
-
+![Client Profile](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/clientProfile.PNG)
 ### Making a command
+![](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/clientCom.PNG)
 
 ## See the website live
 Just click the [link](https://ai-commerce.herokuapp.com)
