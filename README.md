@@ -27,7 +27,8 @@ Password: 123321
 ![](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/animations.PNG)
 ### Rankings
 ![](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/topuri.PNG)
-
+### See the client offers
+![](https://github.com/JusticeBringer/aiCommerce/blob/master/uploads/comenzi.PNG)
 ## Client point of view
 
 ### Profile
