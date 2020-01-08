@@ -5,7 +5,8 @@
 <html lang="ro">
 
 <head>
-    <% include ../fragmente/headLinks.ejs %>
+    <%include ../fragmente/headLinks.ejs %>
+    <%include ../fragmente/prod.ejs%>
 
     <title> AiComerț </title>
 
@@ -23,6 +24,7 @@
     </header>
 
     <script src="/javascript/mobileMenu.js"></script>
+    <script src="/javascript/onloadIndex.js"></script>
 
     <!--
         ############################################################### Header ##################################
@@ -36,7 +38,7 @@
             <h1>Comerciant în România</h1>
             <hr class="cevaHr">
             <p> Lasă-te descoperit de clienți</p>
-               <a href="/galerie" class="butonFront">Explorează harta</a>
+               <a href="/galerie" class="butonFront">Explorează producătorii</a>
         </div>
     </section>
     <!--
@@ -46,6 +48,10 @@
 
     <nav class="pentruNavFront">
         <ul>
+            <li>
+                <a href="#"></a>
+            </li>
+            <!--
             <li>
                 <a href="#">Cei mai apreciați &hearts; </a>
             </li>
@@ -61,6 +67,7 @@
             <li>
                 <a href="#"> Cei mai ... &#9888;</a>
             </li>
+            -->
         </ul>
     </nav>
 
@@ -104,27 +111,15 @@
         </div>
 
         <div class="butonMiddle">
-            <a class="butonFront" href="/galerie"> Vizualizează toată produsele </a>
+            <a class="butonFront" href="/galerie"> Vizualizează toți producătorii </a>
         </div>
 
     </section>
 
 
     <aside class="pentruAside2">
-        <h2>Topul producătorilor apreciați</h2>
-        <ol>
-            <li> Gheorghe Gheorghe</li>
-            <li>Vasilescu Chiraut</li>
-            <li> Gheorghe Gheorghe</li>
-            <li>Vasilescu Chiraut</li>
-            <li> Gheorghe Gheorghe</li>
-            <li>Vasilescu Chiraut</li>
-            <li> Gheorghe Gheorghe</li>
-            <li>Vasilescu Chiraut</li>
-            <li> Gheorghe Gheorghe</li>
-            <li>Vasilescu Chiraut</li>
-            <li> Gheorghe Gheorghe</li>
-            <li>Vasilescu Chiraut</li>
+        <h2>Topul producătorilor noi</h2>
+        <ol id="listaDeProd">
         </ol>
     </aside>
 
@@ -132,29 +127,14 @@
         <div class="sectionContainer">
             <div>
                 <h2>
-                    Utilizatori
+                    Producători promovați
                 </h2>
                 <hr class="pentruFrontHr">
             </div>
 
-            <div class="card">
-                <a href="/galerie"> <img src="/pictures/avatar1.jpg" alt="Palatul Culturii în Iași" title="Iași" class="showCard"> </a>
-                <div class="containerFront">
-                    <h3>
-                        Gheorghe Gheorghe
-                    </h3>
-                    <p>Un producător apreciat</p>
-                </div>
-            </div>
-            <div class="card">
-                <a href="/galerie"> <img src="/pictures/avatar2.jpg" alt="Munții Măcin din Tulcea" title="Munții Măcin" class="showCard"> </a>
-                <div class="containerFront">
-                    <h3>
-                        Vasilescu Chiraut
-                    </h3>
-                    <p>Cinstea e la locul ei</p>
-                </div>
-            </div>
+            <% for (var i = 0; i < producatori.length && i < 3; i++) { %>
+                <%include ../fragmente/template_user.ejs%>
+            <% } %>
 
         </div>
     </section>

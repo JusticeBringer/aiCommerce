@@ -50,12 +50,11 @@ function localStor( vectorProducatori, idButon) {
 
 
 function sortAfterDate(vectorProd) {
-    const vectorProducatori = vectorProd.sort(function (a, b) {
+    return vectorProd.sort(function (a, b) {
         if (a.dataInreg < b.dataInreg)
             return 1;
         return -1;
     });
-    return vectorProducatori;
 }
 
 function DomCerintaSase() {

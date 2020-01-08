@@ -60,11 +60,33 @@ function alertComanda(){
         });
 
     });
-
-
-
-
 }
+
+(function ( $ ) {
+
+    $.fn.changeElem = function( options ) {
+
+        // This is the easiest way to have default options.
+        var settings = $.extend({
+            // These are the defaults.
+            backgroundColor: "white",
+        }, options );
+
+        // Greenify the collection based on the settings variable.
+        return this.css({
+            color: settings.color,
+            backgroundColor: settings.backgroundColor
+        });
+
+    };
+
+}( jQuery ));
+
+$( "div" ).changeElem({
+    color: "orange",
+    backgroundColor: "#3884bc",
+    outline: "2px solid red"
+});
 
 window.onload = function () {
     fillTheProd();

@@ -82,7 +82,7 @@ async function sendComandaMail(nume, prenume, email) {
         to: email,
         subject: "Comandă nouă",
         text: "Salut, "+ nume,
-        html: "<h1> Salut, " + prenume + "</h1>" + "<p> Ai o nouă comandă. Intră în cont.</p>"
+        html: "<h1> Salut, " + prenume + "</h1>" + "<p> Ai efectuat o nouă comandă.</p>"
     });
 
     console.log("Comanda trimisa: %s", info.messageId);
@@ -117,12 +117,21 @@ app.use('/javascript', express.static('javascript'));
 app.use('/uploads', express.static('uploads'));
 app.use('/audio', express.static('audio'));
 app.use('/video', express.static('video'));
+app.use('/jsonFiles', express.static('jsonFiles'));
 
 // cand se face o cerere get catre pagina de index 
 app.get('/', function(req, res) {
     /*afiseaza(render) pagina folosind ejs (deoarece este setat ca view engine) */
 
-    res.render('html/index', {user: req.session.username});
+    let rawdata = fs.readFileSync('jsonFiles/producatori.json');
+    let jsfis = JSON.parse(rawdata);
+    console.log(jsfis.producatori);
+
+    produse = getJson("jsonFiles/producatori.json");
+
+    res.render('html/index',{producatori: jsfis.producatori, user: req.session.username});
+
+
 });
 
 
@@ -137,7 +146,7 @@ app.post('/contulMeu', function (req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
 
-        jsfis = getJson('producatori.json');
+        jsfis = getJson('jsonFiles/producatori.json');
         var cifru = crypto.createCipher('aes-128-cbc', 'mypassword');
         var encrParola;
         encrParola = cifru.update(fields.parola, 'utf8', 'hex');//cifrez parola
@@ -152,13 +161,19 @@ app.post('/contulMeu', function (req, res) {
             console.log(encrParola);
             req.session.username=user;//setez userul ca proprietate a sesiunii
 
-            let rawdataR = fs.readFileSync('producatori.json');
+            let rawdataR = fs.readFileSync('jsonFiles/producatori.json');
             let jsfisR = JSON.parse(rawdataR);
 
-            res.render('html/utilizatorProducator', {producatori: jsfisR.producatori, user: req.session.username});
+            let rawdataCom = fs.readFileSync('jsonFiles/comenzi.json');
+            let jsfisCom = JSON.parse(rawdataCom);
+
+            let rawdataClient = fs.readFileSync('jsonFiles/clienti.json');
+            let jsfisClient = JSON.parse(rawdataClient);
+
+            res.render('html/utilizatorProducator', {producatori: jsfisR.producatori, comenzi: jsfisCom.comenzi, clienti: jsfisClient.clienti, user: req.session.username});
         }
         else{
-            jsfis = getJson('clienti.json');
+            jsfis = getJson('jsonFiles/clienti.json');
             var cifru = crypto.createCipher('aes-128-cbc', 'mypassword');
             var encrParola;
             encrParola = cifru.update(fields.parola, 'utf8', 'hex');//cifrez parola
@@ -173,7 +188,7 @@ app.post('/contulMeu', function (req, res) {
                 console.log(encrParola);
                 req.session.username=user;//setez userul ca proprietate a sesiunii
 
-                let rawdataClient = fs.readFileSync('clienti.json');
+                let rawdataClient = fs.readFileSync('jsonFiles/clienti.json');
                 let jsfisClient = JSON.parse(rawdataClient);
 
                 res.render('html/utilizatorClient', {clienti: jsfisClient.clienti ,user: req.session.username});
@@ -202,18 +217,18 @@ app.get('/register', function(req, res) {
 // ##################################################### Afisare in galerie a producatorilor
 
 app.get('/galerie', function (req, res) {
-    let rawdata = fs.readFileSync('producatori.json');
+    let rawdata = fs.readFileSync('jsonFiles/producatori.json');
     let jsfis = JSON.parse(rawdata);
     console.log(jsfis.producatori);
 
-    produse = getJson("producatori.json");
+    produse = getJson("jsonFiles/producatori.json");
 
     res.render('html/galerie',{producatori: jsfis.producatori, user: req.session.username});
     //todo res.render('html/galerie',{producatori: jsfis.producatori, user: req.session.username, produse:produse.produse});
 });
 
 app.get('/galerie', function (req, res) {
-    let rawdata = fs.readFileSync('clienti.json');
+    let rawdata = fs.readFileSync('jsonFiles/clienti.json');
     let jsfis = JSON.parse(rawdata);
     console.log(jsfis.clienti);
 
@@ -237,7 +252,7 @@ app.post('/inregistrare_producator', (req, res) => {
         var calePoza=(files.poza && files.poza.name!="")?files.poza.name:""; //verific daca exista poza (poza este numele campului din form
 
         //var calePoza = files.poza.name; //verific daca exista poza, unde poza este numele campului din form
-        let rawdata = fs.readFileSync('producatori.json');
+        let rawdata = fs.readFileSync('jsonFiles/producatori.json');
         let jsfis = JSON.parse(rawdata); //parsez textul si obtin obiectul asociat JSON-ului
 
         var cifru = crypto.createCipher('aes-128-cbc', 'mypassword');
@@ -249,7 +264,7 @@ app.post('/inregistrare_producator', (req, res) => {
                                 oras: fields.oras, localitate: fields.localitate, dataInreg: new Date(), rol: 'producator', produse: fields.produse, poza: calePoza});
         jsfis.lastId++;
 
-        saveJson(jsfis, 'producatori.json');
+        saveJson(jsfis, 'jsonFiles/producatori.json');
         res.render('html/inregistrare_producator', {user: req.session.username, rsstatus:"ok"});
 
         trimiteMail(fields.nume, fields.prenume ,fields.email).catch((err) => {console.log(err)});
@@ -291,7 +306,7 @@ app.post('/inregistrare_client', (req, res) => {
         console.log('file uploaded : ' + files.poza.path);//verific calea buna in consola
         var calePoza=(files.poza && files.poza.name!="")?files.poza.name:""; //verific daca exista poza (poza este numele campului din form
 
-        let rawdata = fs.readFileSync('clienti.json');
+        let rawdata = fs.readFileSync('jsonFiles/clienti.json');
         let jsfis = JSON.parse(rawdata);
 
         var cifru = crypto.createCipher('aes-128-cbc', 'mypassword');
@@ -305,7 +320,7 @@ app.post('/inregistrare_client', (req, res) => {
         jsfis.lastId++;
 
         res.render('html/inregistrare_client', {user: req.session.username, rsstatus:"ok"});
-        saveJson(jsfis, 'clienti.json');
+        saveJson(jsfis, 'jsonFiles/clienti.json');
 
         trimiteMail(fields.nume, fields.prenume ,fields.email).catch((err) => {console.log(err)});
     });
@@ -344,7 +359,7 @@ app.post('/buton', function(req, res) {
 //############################################################### Afisarea producatorilor si clientilor
 
 app.get('/useri', function(req, res) {
-    let rawdata = fs.readFileSync('producatori.json');
+    let rawdata = fs.readFileSync('jsonFiles/producatori.json');
     let jsfis = JSON.parse(rawdata);
     console.log(jsfis.producatori);
 
@@ -368,41 +383,49 @@ app.get('/galerie', function(req, res) {
     res.render('html/galerie', {user: req.session.username});
 });
 app.get('/topuriProd', function(req, res) {
-    let rawdata = fs.readFileSync('producatori.json');
+    let rawdata = fs.readFileSync('jsonFiles/producatori.json');
     let jsfis = JSON.parse(rawdata);
 
     res.render('html/topuriProd', {producatori: jsfis.producatori, user: req.session.username});
 });
 app.get('/utilizatorProducator', function(req, res) {
-    let rawdata = fs.readFileSync('producatori.json');
+    let rawdata = fs.readFileSync('jsonFiles/producatori.json');
     let jsfis = JSON.parse(rawdata);
 
-    res.render('html/utilizatorProducator', {producatori: jsfis.producatori, user: req.session.username});
-});
-app.get('/utilizatorClient', function(req, res) {
-    let rawdataClient = fs.readFileSync('clienti.json');
+    let rawdataCom = fs.readFileSync('jsonFiles/comenzi.json');
+    let jsfisCom = JSON.parse(rawdataCom);
+
+    //comenzi = getJson("jsonFiles/comenzi.json");
+
+    let rawdataClient = fs.readFileSync('jsonFiles/clienti.json');
     let jsfisClient = JSON.parse(rawdataClient);
 
-    res.render('html/utilizatorClient', {clienti: jsfisClient.clienti ,user: req.session.username});
+    res.render('html/utilizatorProducator', {comenzi: jsfisCom.comenzi, clienti: jsfisClient.clienti, producatori: jsfis.producatori, user: req.session.username});
+});
+app.get('/utilizatorClient', function(req, res) {
+    let rawdataClient = fs.readFileSync('jsonFiles/clienti.json');
+    let jsfisClient = JSON.parse(rawdataClient);
+
+    res.render('html/utilizatorClient', {clienti: jsfisClient.clienti, user: req.session.username});
 });
 app.get('/comanda', function(req, res) {
-    let rawdata = fs.readFileSync('comenzi.json');
-    let jsfis = JSON.parse(rawdata);
-
-    let rawdataProd = fs.readFileSync('producatori.json');
+    let rawdataProd = fs.readFileSync('jsonFiles/producatori.json');
     let jsfisProd = JSON.parse(rawdataProd);
 
-    res.render('html/comanda', {producatori: jsfisProd.producatori, comenzi: jsfis.comenzi ,user: req.session.username});
+    let rawdataClient = fs.readFileSync('jsonFiles/clienti.json');
+    let jsfisClient = JSON.parse(rawdataClient);
+
+    res.render('html/comanda', { producatori: jsfisProd.producatori, clienti: jsfisClient.clienti ,user: req.session.username});
 });
 
 app.post('/comanda', (req, res) => {
 
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
-        let rawdata = fs.readFileSync('comenzi.json');
+        let rawdata = fs.readFileSync('jsonFiles/comenzi.json');
         let jsfis = JSON.parse(rawdata);
 
-        let rawdataClient = fs.readFileSync('clienti.json');
+        let rawdataClient = fs.readFileSync('jsonFiles/clienti.json');
         let jsfisClient = JSON.parse(rawdataClient);
 
         jsfis.comenzi.push({id:jsfis.lastId, email: req.session.username.email, parola: req.session.username.parola, nume: req.session.username.nume, prenume: req.session.username.prenume, dataComenzii: new Date(),
@@ -410,7 +433,7 @@ app.post('/comanda', (req, res) => {
 
         jsfis.lastId++;
 
-        saveJson(jsfis, 'comenzi.json');
+        saveJson(jsfis, 'jsonFiles/comenzi.json');
         sendComandaMail(req.session.username.nume, req.session.username.prenume , req.session.username.email).catch((err) => {console.log(err)});
     })
 

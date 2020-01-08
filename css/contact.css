@@ -80,6 +80,13 @@ input[type=submit]:hover {
     margin-right: 0;
 }
 
+.columnFormMare {
+    float: left;
+    width: 70%;
+    padding: 4em;
+    margin-right: 0;
+}
+
 .columnFormLogin{
     float: left;
     width: 30%;

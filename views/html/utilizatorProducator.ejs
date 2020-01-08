@@ -236,12 +236,13 @@
     <div class="columnForm spatiereTop">
         <h2> Video </h2>
 
-        <button onclick="playVid()" type="button" class="butonFormLogin">Play Video</button>
-        <button onclick="pauseVid()" type="button" class="butonFormLogin">Pause Video</button>
-
         <video id="myVideo" width="320" height="176">
             <source src="video/ASMR%20Sounds%20of%20Salad%20Cooking%20Light.mp4" type="video/mp4">
         </video>
+
+        <button onclick="playVid()" type="button" class="butonFormLogin">Play Video</button>
+        <button onclick="pauseVid()" type="button" class="butonFormLogin">Pause Video</button>
+
     </div>
 </section>
 
@@ -287,6 +288,25 @@
 <section class="facClear">
     <div class="sectionContainer" id="punOferte">
 
+    </div>
+</section>
+
+<section class="facClear">
+    <div class="columnFormMare">
+        <h2 class="universalHeading"> Comezi de la clienți
+        </h2>
+        <% for (var i = 0; i < comenzi.length; i++) { %>
+            <% if(i % 4 == 0 && i != 0){ %>
+                <div class="spatiuJos">
+                </div>
+            <% }%>
+            <% for (var j = 0; j < clienti.length; j++) { %>
+                    <%console.log(comenzi[i].producator + " " + user.nume + " " + user.prenume)%>
+                    <% if(comenzi[i].producator == (user.nume + " " + user.prenume)) {%>
+                        <%include ../fragmente/template_comanda.ejs%>
+                    <%}%>
+                <% }%>
+        <% } %>
     </div>
 </section>
 

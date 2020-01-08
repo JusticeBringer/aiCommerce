@@ -4,6 +4,7 @@
 
 <head>
     <% include ../fragmente/headLinks.ejs %>
+    <% include ../fragmente/prod.ejs %>
 
     <title> Galerie </title>
 
@@ -39,22 +40,13 @@
     <nav class="pentruNavShow">
         <ul>
             <li>
-                <button onclick="showHide()" class="butonGradient"> Cele mai apreciate &hearts;</button>
+                <button onclick="showN()" class="butonGradient" id="noiProdGal"> Cei mai noi producători &hearts;</button>
             </li>
             <li>
-                <a href="#">Cei mai apreciați &hearts; </a>
+                <a href="#" onclick="showN2()" id="maiProdGal">Cei mai producători </a>
             </li>
             <li>
-                <a href="#"> Cei mai vizitați &#9872; </a>
-            </li>
-            <li>
-                <a href="#"> Cei mai cunoscuți &#10003; </a>
-            </li>
-            <li>
-                <a href="#"> Cei mai îndepărtați &#10005;</a>
-            </li>
-            <li>
-                <a href="#"> Cei mai ... &#9888;</a>
+                <a href="#" id="ajaxButton" onclick="forAjax()"> Arată producatori.json </a>
             </li>
         </ul>
 
@@ -72,22 +64,50 @@
                 <hr class="pentruFrontHr">
             </div>
             <br>
-            <% for (var i = 0; i < producatori.length; i++) { %>
-            <% if(i % 4 == 0 && i != 0){ %>
-                <div class="spatiuJos">
-                </div>
-            <% }%>
-            <div class="card">
-                <a href="/galerie"> <img src="/uploads/<%= producatori[i].poza %>" alt="nu are poza"  class="showCard"> </a>
-                <div class="containerFront">
-                    <h3>
-                        <%= producatori[i].nume %>
-                        <%= producatori[i].prenume %>
-                    </h3>
-                    <p> Produse:  <%= producatori[i].produse %> </p>
-                </div>
+            <div id="idSection">
+                <% for (var i = 0; i < producatori.length; i++) { %>
+                <% if(i % 4 == 0 && i != 0){ %>
+                    <div class="spatiuJos">
+                    </div>
+                <% }%>
+                    <%include ../fragmente/template_user.ejs%>
+                <% } %>
             </div>
-            <% } %>
+            <div id="idSection2" class="showNone">
+                <%function sortAfterDateee(vectorProd) {
+                    return vectorProd.sort(function (a, b) {
+                        if (a.dataInreg < b.dataInreg)
+                            return 1;
+                        return -1;
+                    });
+                } %>
+                <%var sorted = sortAfterDateee(producatori);%>
+                <% for (var i = 0; i < sorted.length; i++) { %>
+                    <% if(i % 4 == 0 && i != 0){ %>
+                        <div class="spatiuJos">
+                        </div>
+                    <% }%>
+                    <%include ../fragmente/template_user.ejs%>
+                <% } %>
+            </div>
+            <div id="idSection3" class="showNone">
+                <%function returnNrProddd(vectorProd) {
+                    const vectorProducatori = vectorProd.sort(function (a, b) {
+                        if (a.produse > b.produse)
+                            return 1;
+                        return -1;
+                    });
+                    return vectorProducatori;
+                }%>
+                <%var mostProd = returnNrProddd(producatori);%>
+                <% for (var i = 0; i < mostProd.length; i++) { %>
+                    <% if(i % 4 == 0 && i != 0){ %>
+                        <div class="spatiuJos">
+                        </div>
+                    <% }%>
+                    <%include ../fragmente/template_user.ejs%>
+                <% } %>
+            </div>
         </div>
     </main>
 

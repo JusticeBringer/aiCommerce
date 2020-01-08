@@ -23,6 +23,10 @@
 <script src="/javascript/mobileMenu.js"></script>
 <script src="javascript/globale.js"></script>
 <script src="https://npmcdn.com/js-alert/dist/jsalert.min.js"></script>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
 <script src="javascript/onloadComanda.js"></script>
 
 <main>
@@ -42,7 +46,7 @@ TODO Sterge enctype de mai jos
         <div class="columnForm">
             <h3 class="headingComanda">Formular comandă</h3>
             <% if(!locals.rsstatus) { %><!-- verific daca status e definit-->
-            <form  method="post">
+            <form  method="post" id="javascript_form">
                 <p>
                     <label>
                         <fieldset> <legend>

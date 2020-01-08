@@ -7,6 +7,19 @@
     padding-left: 25vw;
 }
 
+.pentruNavShowTop{
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    padding-left: 25vw;
+}
+
+.pentruNavShowTop > ul > li{
+    background-color: #003348;
+    list-style-type: none;
+    margin-left: 5vw;
+}
+
 .pentruNavShow{
     overflow: hidden;
     text-align: center;
